@@ -1,0 +1,1101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>FoodShare | Share Food. Reduce Waste.</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Segoe UI", Arial, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #f4f8f4;
+            color: #1f2937;
+        }
+
+        /* HERO */
+
+        .hero {
+            max-width: 1200px;
+            margin: auto;
+            padding: 75px 25px 40px;
+            display: grid;
+            grid-template-columns: 1.15fr 0.85fr;
+            gap: 48px;
+            align-items: center;
+        }
+
+        .badge {
+            display: inline-block;
+            background: #e5f4e8;
+            color: #237a36;
+            padding: 8px 15px;
+            border-radius: 30px;
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 0.6px;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: 58px;
+            line-height: 1.05;
+            color: #17351f;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 span {
+            color: #2e8b43;
+        }
+
+        .hero-text {
+            font-size: 18px;
+            line-height: 1.75;
+            color: #687180;
+            max-width: 650px;
+            margin-bottom: 28px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+        }
+
+        .primary {
+            text-decoration: none;
+            background: #2e8b43;
+            color: white;
+            padding: 14px 25px;
+            border-radius: 10px;
+            font-weight: 700;
+        }
+
+        .primary:hover {
+            background: #1f6c32;
+        }
+
+        .secondary {
+            text-decoration: none;
+            background: white;
+            color: #237a36;
+            border: 1px solid #237a36;
+            padding: 14px 25px;
+            border-radius: 10px;
+            font-weight: 700;
+        }
+
+        .secondary:hover {
+            background: #e8f5e9;
+        }
+
+        /* HERO FOOD CARD */
+
+        .hero-card {
+            background: linear-gradient(145deg, #2e8b43, #49b867);
+            color: white;
+            padding: 38px;
+            border-radius: 30px;
+            box-shadow: 0 22px 45px rgba(46, 139, 67, 0.23);
+            text-decoration: none;
+            display: block;
+            transition: 0.25s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 28px 55px rgba(46, 139, 67, 0.30);
+        }
+
+        .hero-icon {
+            width: 76px;
+            height: 76px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: rgba(255,255,255,0.18);
+            border-radius: 22px;
+            font-size: 38px;
+            margin-bottom: 22px;
+        }
+
+        .hero-card h2 {
+            font-size: 30px;
+            margin-bottom: 12px;
+        }
+
+        .hero-card p {
+            color: rgba(255,255,255,0.9);
+            font-size: 15px;
+            line-height: 1.65;
+            margin-bottom: 20px;
+        }
+
+        .hero-card-link {
+            font-size: 15px;
+            font-weight: 800;
+        }
+
+        /* COMMUNITY IMPACT */
+
+        .impact-stats {
+            max-width: 1120px;
+            margin: 20px auto 65px;
+            padding: 0 25px;
+        }
+
+        .impact-panel {
+            background: linear-gradient(135deg, #132e1b, #1f4d2b);
+            border-radius: 28px;
+            padding: 38px 35px 32px;
+            color: white;
+            box-shadow: 0 20px 40px rgba(15, 36, 21, 0.18);
+        }
+
+        .impact-heading {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .impact-heading small {
+            display: inline-block;
+            background: rgba(255,255,255,0.09);
+            padding: 7px 12px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            margin-bottom: 12px;
+        }
+
+        .impact-heading h2 {
+            font-size: 30px;
+            margin-bottom: 7px;
+        }
+
+        .impact-heading p {
+            color: #c7d4ca;
+            font-size: 14px;
+        }
+
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        .impact-item {
+            padding: 18px 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        .impact-item:not(:last-child)::after {
+            content: "";
+            position: absolute;
+            right: 0;
+            top: 18%;
+            width: 1px;
+            height: 64%;
+            background: rgba(255,255,255,0.13);
+        }
+
+        .impact-link {
+            color: inherit;
+            text-decoration: none;
+            display: block;
+            border-radius: 20px;
+            padding: 10px;
+            transition: 0.2s;
+        }
+
+        .impact-link:hover {
+            background: rgba(255,255,255,0.06);
+            transform: translateY(-3px);
+        }
+
+        .impact-circle {
+            width: 72px;
+            height: 72px;
+            margin: 0 auto 14px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(145deg, #4caf62, #2f8d46);
+            font-size: 30px;
+        }
+
+        .impact-number {
+            font-size: 42px;
+            line-height: 1;
+            font-weight: 800;
+            margin-bottom: 7px;
+        }
+
+        .impact-label {
+            color: #cbd6ce;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        /* FEATURED FOOD */
+
+        .section {
+            max-width: 1200px;
+            margin: auto;
+            padding: 45px 25px;
+        }
+
+        .heading {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .heading h2 {
+            color: #17351f;
+            font-size: 35px;
+            margin-bottom: 10px;
+        }
+
+        .heading p {
+            color: #687180;
+            font-size: 16px;
+        }
+
+        .food-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
+
+        .food-card {
+            background: white;
+            border: 1px solid #e4e9e4;
+            border-radius: 20px;
+            padding: 25px;
+            box-shadow: 0 8px 22px rgba(0,0,0,0.04);
+            transition: 0.2s;
+        }
+
+        .food-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+        }
+
+        .food-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 18px;
+        }
+
+        .food-icon {
+            width: 52px;
+            height: 52px;
+            border-radius: 15px;
+            background: #e8f5e9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 27px;
+        }
+
+        .available-badge {
+            background: #e8f5e9;
+            color: #237a36;
+            padding: 6px 10px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 800;
+        }
+
+        .food-card h3 {
+            color: #237a36;
+            font-size: 21px;
+            margin-bottom: 14px;
+        }
+
+        .food-detail {
+            color: #687180;
+            font-size: 14px;
+            margin-bottom: 8px;
+            line-height: 1.5;
+        }
+
+        .food-detail strong {
+            color: #374151;
+        }
+
+        .food-button {
+            display: block;
+            width: 100%;
+            text-align: center;
+            text-decoration: none;
+            margin-top: 18px;
+            background: #2e8b43;
+            color: white;
+            padding: 11px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 700;
+        }
+
+        .food-button:hover {
+            background: #1f6c32;
+        }
+
+        .empty-food {
+            background: white;
+            border: 1px solid #e4e9e4;
+            border-radius: 20px;
+            padding: 35px;
+            text-align: center;
+            color: #687180;
+        }
+
+        /* ROLES */
+
+        .roles {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .role {
+            background: white;
+            border: 1px solid #e4e9e4;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 8px 22px rgba(0,0,0,0.04);
+            transition: 0.2s;
+        }
+
+        .role:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+        }
+
+        .role-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 16px;
+            background: #e8f5e9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 29px;
+            margin-bottom: 18px;
+        }
+
+        .role h3 {
+            color: #237a36;
+            font-size: 23px;
+            margin-bottom: 10px;
+        }
+
+        .role p {
+            color: #687180;
+            line-height: 1.6;
+            margin-bottom: 22px;
+            min-height: 75px;
+        }
+
+        .role-button {
+            display: inline-block;
+            text-decoration: none;
+            background: #2e8b43;
+            color: white;
+            padding: 11px 18px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 700;
+        }
+
+        .role-button:hover {
+            background: #1f6c32;
+        }
+
+        /* HOW IT WORKS */
+
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px;
+        }
+
+        .step {
+            background: white;
+            border: 1px solid #e4e9e4;
+            padding: 25px 18px;
+            border-radius: 16px;
+            text-align: center;
+        }
+
+        .step-number {
+            width: 42px;
+            height: 42px;
+            margin: 0 auto 13px;
+            border-radius: 50%;
+            background: #2e8b43;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: 800;
+        }
+
+        .step h4 {
+            margin-bottom: 8px;
+            color: #1f2937;
+        }
+
+        .step p {
+            color: #687180;
+            font-size: 14px;
+            line-height: 1.55;
+        }
+
+        /* CTA */
+
+        .cta {
+            max-width: 1120px;
+            margin: 35px auto 60px;
+            padding: 45px 25px;
+            border-radius: 24px;
+            background: #17351f;
+            color: white;
+            text-align: center;
+        }
+
+        .cta h2 {
+            font-size: 33px;
+            margin-bottom: 12px;
+        }
+
+        .cta p {
+            color: #d5ddd7;
+            max-width: 650px;
+            margin: 0 auto 22px;
+            line-height: 1.6;
+        }
+
+        .join {
+            display: inline-block;
+            background: white;
+            color: #237a36;
+            text-decoration: none;
+            padding: 13px 24px;
+            border-radius: 9px;
+            font-weight: 800;
+        }
+
+        /* FOOTER */
+
+        footer {
+            background: #0e2414;
+            color: #b9c6bd;
+            text-align: center;
+            padding: 24px;
+            font-size: 13px;
+        }
+
+        /* RESPONSIVE */
+
+        @media (max-width: 900px) {
+
+            .hero {
+                grid-template-columns: 1fr;
+            }
+
+            .food-grid,
+            .roles {
+                grid-template-columns: 1fr;
+            }
+
+            .steps {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .hero h1 {
+                font-size: 46px;
+            }
+        }
+
+        @media (max-width: 650px) {
+
+            .hero {
+                padding: 45px 18px 25px;
+            }
+
+            .section,
+            .impact-stats {
+                padding-left: 18px;
+                padding-right: 18px;
+            }
+
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .impact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .impact-item:not(:last-child)::after {
+                display: none;
+            }
+
+            .impact-item:not(:last-child) {
+                border-bottom: 1px solid rgba(255,255,255,0.12);
+                padding-bottom: 25px;
+                margin-bottom: 10px;
+            }
+
+            .steps {
+                grid-template-columns: 1fr;
+            }
+
+            .buttons {
+                flex-direction: column;
+            }
+
+            .primary,
+            .secondary {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+        <div>
+
+            <div class="badge">
+                COMMUNITY FOOD SHARING PLATFORM
+            </div>
+
+            <h1>
+                Share food.<br>
+                <span>Reduce waste.</span><br>
+                Help people.
+            </h1>
+
+            <p class="hero-text">
+                FoodShare connects surplus food with people who need it.
+                Donors share food, receivers request it, and volunteers
+                help move it from one place to another.
+            </p>
+
+            <div class="buttons">
+
+                <a class="primary" href="register.html">
+                    Get Started
+                </a>
+
+                <a class="secondary" href="#roles">
+                    Explore Roles
+                </a>
+
+            </div>
+
+        </div>
+
+        <a href="availableFood" class="hero-card">
+
+            <div class="hero-icon">
+                &#127860;
+            </div>
+
+            <h2>
+                Browse Available Food
+            </h2>
+
+            <p>
+                Discover food donations that are currently available
+                and request food that you need.
+            </p>
+
+            <div class="hero-card-link">
+                View Available Food →
+            </div>
+
+        </a>
+
+    </section>
+
+
+    <!-- COMMUNITY IMPACT -->
+
+    <section class="impact-stats">
+
+        <div class="impact-panel">
+
+            <div class="impact-heading">
+
+                <small>
+                    LIVE COMMUNITY IMPACT
+                </small>
+
+                <h2>
+                    FoodShare in Action
+                </h2>
+
+                <p>
+                    Real-time activity from our food-sharing community
+                </p>
+
+            </div>
+
+            <div class="impact-grid">
+
+                <div class="impact-item">
+
+                    <a href="availableFood" class="impact-link">
+
+                        <div class="impact-circle">
+                            &#127860;
+                        </div>
+
+                        <div class="impact-number" id="availableCount">
+                            ...
+                        </div>
+
+                        <div class="impact-label">
+                            Available Donations
+                        </div>
+
+                    </a>
+
+                </div>
+
+                <div class="impact-item">
+
+                    <div class="impact-link">
+
+                        <div class="impact-circle">
+                            &#9989;
+                        </div>
+
+                        <div class="impact-number" id="completedCount">
+                            ...
+                        </div>
+
+                        <div class="impact-label">
+                            Completed Deliveries
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="impact-item">
+
+                    <div class="impact-link">
+
+                        <div class="impact-circle">
+                            &#128106;
+                        </div>
+
+                        <div class="impact-number" id="helpedCount">
+                            ...
+                        </div>
+
+                        <div class="impact-label">
+                            People Helped
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FEATURED FOOD -->
+
+    <section class="section">
+
+        <div class="heading">
+
+            <h2>
+                Featured Food
+            </h2>
+
+            <p>
+                Recently available donations from the FoodShare community.
+            </p>
+
+        </div>
+
+        <div class="food-grid" id="featuredFoodContainer">
+
+            <div class="empty-food">
+                Loading available food...
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ROLES -->
+
+    <section class="section" id="roles">
+
+        <div class="heading">
+
+            <h2>
+                Choose Your Role
+            </h2>
+
+            <p>
+                Everyone can contribute to reducing food waste.
+            </p>
+
+        </div>
+
+        <div class="roles">
+
+            <div class="role">
+
+                <div class="role-icon">
+                    &#127869;
+                </div>
+
+                <h3>
+                    Donor
+                </h3>
+
+                <p>
+                    Share extra food from your home, restaurant,
+                    event, or organization.
+                </p>
+
+                <a class="role-button" href="register.html">
+                    Register as Donor
+                </a>
+
+            </div>
+
+            <div class="role">
+
+                <div class="role-icon">
+                    &#128100;
+                </div>
+
+                <h3>
+                    Receiver
+                </h3>
+
+                <p>
+                    Browse available food, request what you need,
+                    and track your delivery.
+                </p>
+
+                <a class="role-button" href="register.html">
+                    Register as Receiver
+                </a>
+
+            </div>
+
+            <div class="role">
+
+                <div class="role-icon">
+                    &#128666;
+                </div>
+
+                <h3>
+                    Volunteer
+                </h3>
+
+                <p>
+                    Pick up donated food and help deliver it
+                    to receivers.
+                </p>
+
+                <a class="role-button" href="register.html">
+                    Register as Volunteer
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- HOW IT WORKS -->
+
+    <section class="section">
+
+        <div class="heading">
+
+            <h2>
+                How FoodShare Works
+            </h2>
+
+            <p>
+                From surplus food to successful delivery.
+            </p>
+
+        </div>
+
+        <div class="steps">
+
+            <div class="step">
+
+                <div class="step-number">
+                    1
+                </div>
+
+                <h4>
+                    Donate
+                </h4>
+
+                <p>
+                    Donor adds available surplus food.
+                </p>
+
+            </div>
+
+            <div class="step">
+
+                <div class="step-number">
+                    2
+                </div>
+
+                <h4>
+                    Request
+                </h4>
+
+                <p>
+                    Receiver selects and requests food.
+                </p>
+
+            </div>
+
+            <div class="step">
+
+                <div class="step-number">
+                    3
+                </div>
+
+                <h4>
+                    Accept & Pickup
+                </h4>
+
+                <p>
+                    Donor accepts and volunteer picks it up.
+                </p>
+
+            </div>
+
+            <div class="step">
+
+                <div class="step-number">
+                    4
+                </div>
+
+                <h4>
+                    Deliver
+                </h4>
+
+                <p>
+                    Food reaches the receiver successfully.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CTA -->
+
+    <section class="cta">
+
+        <h2>
+            Every Meal Shared Creates an Impact
+        </h2>
+
+        <p>
+            Join FoodShare and help turn surplus food into
+            meaningful support for people in need.
+        </p>
+
+        <a class="join" href="register.html">
+            Join FoodShare
+        </a>
+
+    </section>
+
+
+    <footer>
+        FoodShare © 2026 &nbsp; | &nbsp;
+        Share Food. Reduce Waste. Help People.
+    </footer>
+
+
+    <!-- DATABASE COUNTS -->
+
+    <script>
+
+        fetch("foodStats")
+
+            .then(response => response.json())
+
+            .then(data => {
+
+                document.getElementById("availableCount").textContent =
+                    data.available;
+
+                document.getElementById("completedCount").textContent =
+                    data.completed;
+
+                document.getElementById("helpedCount").textContent =
+                    data.helped;
+
+            })
+
+            .catch(error => {
+
+                console.error(error);
+
+                document.getElementById("availableCount").textContent = "—";
+                document.getElementById("completedCount").textContent = "—";
+                document.getElementById("helpedCount").textContent = "—";
+
+            });
+
+
+        /* FEATURED FOOD */
+
+        fetch("featuredFood")
+
+            .then(response => response.json())
+
+            .then(data => {
+
+                const container =
+                    document.getElementById("featuredFoodContainer");
+
+                container.innerHTML = "";
+
+                if (!data || data.length === 0) {
+
+                    container.innerHTML =
+                        "<div class='empty-food'>" +
+                        "<h3>No food available right now</h3>" +
+                        "<p>New donations will appear here when available.</p>" +
+                        "</div>";
+
+                    return;
+                }
+
+                data.forEach(food => {
+
+                    const card =
+                        document.createElement("div");
+
+                    card.className = "food-card";
+
+                    const donationType =
+                        food.donation_type === "LOW_COST"
+                            ? "Low-Cost"
+                            : "Free Donation";
+
+                    card.innerHTML =
+
+                        "<div class='food-top'>" +
+
+                            "<div class='food-icon'>" +
+                                "&#127860;" +
+                            "</div>" +
+
+                            "<div class='available-badge'>" +
+                                "AVAILABLE" +
+                            "</div>" +
+
+                        "</div>" +
+
+                        "<h3>" +
+                            escapeHtml(food.food_name) +
+                        "</h3>" +
+
+                        "<div class='food-detail'>" +
+                            "<strong>Quantity:</strong> " +
+                            food.quantity +
+                        "</div>" +
+
+                        "<div class='food-detail'>" +
+                            "<strong>Location:</strong> " +
+                            escapeHtml(food.location) +
+                        "</div>" +
+
+                        "<div class='food-detail'>" +
+                            "<strong>Donation:</strong> " +
+                            donationType +
+                        "</div>" +
+
+                        "<a class='food-button' href='availableFood'>" +
+                            "View Food" +
+                        "</a>";
+
+                    container.appendChild(card);
+                });
+
+            })
+
+            .catch(error => {
+
+                console.error(error);
+
+                document.getElementById(
+                    "featuredFoodContainer"
+                ).innerHTML =
+
+                    "<div class='empty-food'>" +
+                    "<h3>Featured food unavailable</h3>" +
+                    "<p>Please visit Available Food to see current donations.</p>" +
+                    "</div>";
+
+            });
+
+
+        function escapeHtml(value) {
+
+            const div =
+                document.createElement("div");
+
+            div.textContent =
+                value || "";
+
+            return div.innerHTML;
+        }
+
+    </script>
+
+</body>
+</html>

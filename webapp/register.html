@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+```
+<title>FoodShare - Create Account</title>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+    }
+
+    body {
+        min-height: 100vh;
+        background: linear-gradient(135deg, #e8f5e9, #f4f8f3);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 30px;
+    }
+
+    .card {
+        width: 470px;
+        background: white;
+        border-radius: 22px;
+        padding: 38px 42px;
+        box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12);
+    }
+
+    .logo {
+        text-align: center;
+        font-size: 48px;
+        margin-bottom: 8px;
+    }
+
+    h1 {
+        text-align: center;
+        color: #2e7d32;
+        font-size: 32px;
+        margin-bottom: 8px;
+    }
+
+    .subtitle {
+        text-align: center;
+        color: #777;
+        margin-bottom: 28px;
+        font-size: 14px;
+    }
+
+    .field {
+        margin-bottom: 17px;
+    }
+
+    label {
+        display: block;
+        font-weight: bold;
+        color: #333;
+        margin-bottom: 7px;
+    }
+
+    input,
+    select {
+        width: 100%;
+        padding: 12px 13px;
+        border: 1px solid #d2d2d2;
+        border-radius: 9px;
+        font-size: 15px;
+        outline: none;
+        background: white;
+    }
+
+    input:focus,
+    select:focus {
+        border-color: #43a047;
+        box-shadow: 0 0 5px rgba(67, 160, 71, 0.18);
+    }
+
+    .role-title {
+        margin-top: 4px;
+    }
+
+    button {
+        width: 100%;
+        padding: 13px;
+        margin-top: 8px;
+        border: none;
+        border-radius: 9px;
+        background: #2e7d32;
+        color: white;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background: #1b5e20;
+    }
+
+    .login-link {
+        text-align: center;
+        margin-top: 22px;
+        color: #777;
+        font-size: 14px;
+    }
+
+    .login-link a {
+        color: #2e7d32;
+        font-weight: bold;
+        text-decoration: none;
+    }
+
+    .login-link a:hover {
+        text-decoration: underline;
+    }
+
+    .footer {
+        text-align: center;
+        margin-top: 20px;
+        color: #aaa;
+        font-size: 12px;
+    }
+
+    @media (max-width: 550px) {
+        .card {
+            width: 100%;
+            padding: 30px 25px;
+        }
+
+        body {
+            padding: 15px;
+        }
+    }
+</style>
+```
+
+</head>
+
+<body>
+
+```
+<div class="card">
+
+    <div class="logo">&#127860;</div>
+
+    <h1>Create Account</h1>
+
+    <p class="subtitle">
+        Join FoodShare and help reduce food waste.
+    </p>
+
+    <form action="register" method="post">
+
+        <div class="field">
+            <label for="name">Full Name</label>
+            <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Enter your full name"
+                required
+            >
+        </div>
+
+        <div class="field">
+            <label for="email">Email</label>
+            <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Enter your email"
+                required
+            >
+        </div>
+
+        <div class="field">
+            <label for="password">Password</label>
+            <input
+                type="password"
+                id="password"
+                name="password"
+                placeholder="Create a password"
+                required
+            >
+        </div>
+
+        <div class="field">
+            <label for="phone">Phone</label>
+            <input
+                type="text"
+                id="phone"
+                name="phone"
+                placeholder="Enter your phone number"
+                required
+            >
+        </div>
+
+        <div class="field">
+            <label for="location">Location</label>
+            <input
+                type="text"
+                id="location"
+                name="location"
+                placeholder="Enter your location"
+                required
+            >
+        </div>
+
+        <div class="field">
+            <label class="role-title" for="role">
+                I am
+            </label>
+
+            <select id="role" name="role" required>
+                <option value="">Select your role</option>
+                <option value="DONOR">Donor</option>
+                <option value="RECEIVER">Receiver</option>
+                <option value="VOLUNTEER">Volunteer</option>
+            </select>
+        </div>
+
+        <button type="submit">
+            Create Account
+        </button>
+
+    </form>
+
+    <p class="login-link">
+        Already have an account?
+        <a href="login.html">Login here</a>
+    </p>
+
+    <div class="footer">
+        FoodShare © 2026
+    </div>
+
+</div>
+```
+
+</body>
+</html>

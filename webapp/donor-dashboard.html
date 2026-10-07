@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+<title>FoodShare - Donor Dashboard</title>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+    }
+
+    body {
+        min-height: 100vh;
+        background: linear-gradient(135deg, #e8f5e9, #f8fff8);
+        color: #222;
+    }
+
+    .header {
+        background: linear-gradient(135deg, #2e7d32, #43a047);
+        color: white;
+        padding: 28px 8%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .brand {
+        font-size: 28px;
+        font-weight: bold;
+    }
+
+    .role {
+        background: rgba(255, 255, 255, 0.18);
+        padding: 8px 15px;
+        border-radius: 20px;
+        font-size: 14px;
+    }
+
+    .container {
+        max-width: 1000px;
+        margin: 45px auto;
+        padding: 0 25px;
+    }
+
+    .welcome {
+        text-align: center;
+        margin-bottom: 40px;
+    }
+
+    .welcome h1 {
+        font-size: 36px;
+        color: #2e7d32;
+        margin-bottom: 10px;
+    }
+
+    .welcome p {
+        color: #666;
+        font-size: 17px;
+    }
+
+    .cards {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+    }
+
+    .card {
+        background: white;
+        padding: 32px;
+        border-radius: 18px;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.09);
+        text-align: center;
+        transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 14px 30px rgba(0, 0, 0, 0.13);
+    }
+
+    .icon {
+        font-size: 45px;
+        margin-bottom: 18px;
+    }
+
+    .card h2 {
+        color: #2e7d32;
+        font-size: 23px;
+        margin-bottom: 10px;
+    }
+
+    .card p {
+        color: #777;
+        line-height: 1.5;
+        margin-bottom: 20px;
+    }
+
+    .button {
+        display: inline-block;
+        text-decoration: none;
+        background: #43a047;
+        color: white;
+        padding: 12px 24px;
+        border-radius: 9px;
+        font-weight: bold;
+        transition: background 0.2s;
+    }
+
+    .button:hover {
+        background: #1b5e20;
+    }
+
+    .logout {
+        display: block;
+        width: 180px;
+        margin: 35px auto 0;
+        text-align: center;
+        text-decoration: none;
+        color: #c62828;
+        font-weight: bold;
+        padding: 12px;
+        border: 1px solid #c62828;
+        border-radius: 9px;
+    }
+
+    .logout:hover {
+        background: #c62828;
+        color: white;
+    }
+
+    .footer {
+        text-align: center;
+        margin-top: 45px;
+        padding-bottom: 25px;
+        color: #999;
+        font-size: 13px;
+    }
+
+    @media (max-width: 700px) {
+        .header {
+            padding: 22px;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .cards {
+            grid-template-columns: 1fr;
+        }
+
+        .welcome h1 {
+            font-size: 30px;
+        }
+    }
+</style>
+
+
+</head>
+
+<body>
+
+
+<div class="header">
+    <div class="brand">&#127860; FoodShare</div>
+    <div class="role">DONOR</div>
+</div>
+
+<div class="container">
+
+    <div class="welcome">
+        <h1>Donor Dashboard</h1>
+        <p>Welcome, Donor! Help make surplus food useful.</p>
+    </div>
+
+    <div class="cards">
+
+        <div class="card">
+            <div class="icon">&#127869;</div>
+            <h2>Donate Food</h2>
+            <p>
+                Add available surplus food and make it accessible
+                to people who need it.
+            </p>
+            <a class="button" href="donate-food.html">
+                Donate Food
+            </a>
+        </div>
+
+        <div class="card">
+            <div class="icon">&#128203;</div>
+            <h2>My Donations</h2>
+            <p>
+                View the food items you have donated and track
+                your contributions.
+            </p>
+            <a class="button" href="myDonations">
+                My Donations
+            </a>
+        </div>
+
+        <div class="card">
+            <div class="icon">&#129309;</div>
+            <h2>Donation Requests</h2>
+            <p>
+                View requests from receivers and manage your
+                available food donations.
+            </p>
+            <a class="button" href="donationRequests">
+                Donation Requests
+            </a>
+        </div>
+
+        <div class="card">
+            <div class="icon">&#127793;</div>
+            <h2>Make a Difference</h2>
+            <p>
+                Every shared meal can reduce food waste and
+                support someone in need.
+            </p>
+        </div>
+
+    </div>
+
+    <a class="logout" href="login.html">Logout</a>
+
+    <div class="footer">
+        FoodShare © 2026
+    </div>
+
+</div>
+
+
+</body>
+</html>

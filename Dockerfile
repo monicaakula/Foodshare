@@ -11,7 +11,7 @@ COPY lib/mysql-connector-j-26.7.0.jar /usr/local/tomcat/lib/
 RUN mkdir -p /usr/local/tomcat/webapps/ROOT/WEB-INF/classes && \
     javac -cp "/usr/local/tomcat/lib/*:/usr/local/tomcat/webapps/ROOT/WEB-INF/classes" \
     -d /usr/local/tomcat/webapps/ROOT/WEB-INF/classes \
-    /tmp/src/*.java
+    $(find /tmp/src -name "*.java")
 
 RUN rm -rf /tmp/src
 

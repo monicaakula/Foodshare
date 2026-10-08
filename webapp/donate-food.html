@@ -1,385 +1,1682 @@
 <!DOCTYPE html>
-
 <html>
+
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>FoodShare - Donate Food</title>
 
 
-<title>FoodShare - Donate Food</title>
+    <style>
 
-<style>
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: Arial, sans-serif;
-    }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
 
-    body {
-        min-height: 100vh;
-        background: linear-gradient(135deg, #e8f5e9, #f8fff8);
-        padding: 35px 20px;
-        color: #222;
-    }
 
-    .header {
-        max-width: 900px;
-        margin: 0 auto 25px;
-        background: linear-gradient(135deg, #2e7d32, #43a047);
-        color: white;
-        padding: 25px 30px;
-        border-radius: 18px;
-        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.10);
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
+        body {
+            min-height: 100vh;
+            background: linear-gradient(
+                135deg,
+                #e8f5e9,
+                #f8fff8
+            );
 
-    .brand {
-        font-size: 28px;
-        font-weight: bold;
-    }
+            padding: 35px 20px;
+            color: #222;
+        }
 
-    .role {
-        background: rgba(255, 255, 255, 0.18);
-        padding: 8px 15px;
-        border-radius: 20px;
-        font-size: 14px;
-    }
 
-    .container {
-        max-width: 900px;
-        margin: auto;
-    }
-
-    .title {
-        text-align: center;
-        margin-bottom: 25px;
-    }
-
-    .title h1 {
-        color: #2e7d32;
-        font-size: 36px;
-        margin-bottom: 8px;
-    }
-
-    .title p {
-        color: #666;
-        font-size: 16px;
-    }
-
-    .form-card {
-        background: white;
-        padding: 35px;
-        border-radius: 20px;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.09);
-    }
-
-    .section {
-        margin-bottom: 25px;
-    }
-
-    .section-title {
-        color: #2e7d32;
-        font-size: 19px;
-        font-weight: bold;
-        margin-bottom: 16px;
-        padding-bottom: 8px;
-        border-bottom: 1px solid #e6e6e6;
-    }
-
-    .grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 18px;
-    }
-
-    .field {
-        margin-bottom: 5px;
-    }
-
-    .full {
-        grid-column: 1 / -1;
-    }
-
-    label {
-        display: block;
-        margin-bottom: 7px;
-        font-weight: bold;
-        color: #444;
-    }
-
-    input,
-    select,
-    textarea {
-        width: 100%;
-        padding: 12px 13px;
-        border: 1px solid #d0d0d0;
-        border-radius: 9px;
-        font-size: 15px;
-        outline: none;
-        background: white;
-    }
-
-    textarea {
-        resize: vertical;
-        min-height: 110px;
-    }
-
-    input:focus,
-    select:focus,
-    textarea:focus {
-        border-color: #43a047;
-        box-shadow: 0 0 5px rgba(67, 160, 71, 0.18);
-    }
-
-    input[type="file"] {
-        padding: 10px;
-        background: #fafafa;
-    }
-
-    .hint {
-        margin-top: 6px;
-        color: #888;
-        font-size: 12px;
-    }
-
-    .submit {
-        width: 100%;
-        padding: 14px;
-        border: none;
-        border-radius: 10px;
-        background: #2e7d32;
-        color: white;
-        font-size: 16px;
-        font-weight: bold;
-        cursor: pointer;
-        margin-top: 10px;
-    }
-
-    .submit:hover {
-        background: #1b5e20;
-    }
-
-    .back {
-        display: block;
-        width: 220px;
-        margin: 22px auto 0;
-        text-align: center;
-        text-decoration: none;
-        color: #2e7d32;
-        border: 1px solid #2e7d32;
-        padding: 11px;
-        border-radius: 9px;
-        font-weight: bold;
-    }
-
-    .back:hover {
-        background: #2e7d32;
-        color: white;
-    }
-
-    .footer {
-        text-align: center;
-        margin-top: 25px;
-        color: #999;
-        font-size: 13px;
-    }
-
-    @media (max-width: 700px) {
         .header {
-            flex-direction: column;
-            gap: 10px;
+            max-width: 900px;
+            margin: 0 auto 25px;
+
+            background: linear-gradient(
+                135deg,
+                #2e7d32,
+                #43a047
+            );
+
+            color: white;
+
+            padding: 25px 30px;
+
+            border-radius: 18px;
+
+            box-shadow:
+                0 8px 25px rgba(0, 0, 0, 0.10);
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+        }
+
+
+        .brand {
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+
+        .role {
+            background: rgba(255, 255, 255, 0.18);
+
+            padding: 8px 15px;
+
+            border-radius: 20px;
+
+            font-size: 14px;
+        }
+
+
+        .container {
+            max-width: 900px;
+            margin: auto;
+        }
+
+
+        .title {
             text-align: center;
+            margin-bottom: 25px;
         }
 
-        .grid {
-            grid-template-columns: 1fr;
-        }
-
-        .full {
-            grid-column: auto;
-        }
-
-        .form-card {
-            padding: 25px 20px;
-        }
 
         .title h1 {
-            font-size: 30px;
+            color: #2e7d32;
+
+            font-size: 36px;
+
+            margin-bottom: 8px;
         }
-    }
-</style>
-```
+
+
+        .title p {
+            color: #666;
+
+            font-size: 16px;
+        }
+
+
+        .form-card {
+            background: white;
+
+            padding: 35px;
+
+            border-radius: 20px;
+
+            box-shadow:
+                0 10px 30px rgba(0, 0, 0, 0.09);
+        }
+
+
+        .section {
+            margin-bottom: 25px;
+        }
+
+
+        .section-title {
+            color: #2e7d32;
+
+            font-size: 19px;
+
+            font-weight: bold;
+
+            margin-bottom: 16px;
+
+            padding-bottom: 8px;
+
+            border-bottom:
+                1px solid #e6e6e6;
+        }
+
+
+        .grid {
+            display: grid;
+
+            grid-template-columns:
+                1fr 1fr;
+
+            gap: 18px;
+        }
+
+
+        .field {
+            margin-bottom: 5px;
+        }
+
+
+        .full {
+            grid-column: 1 / -1;
+        }
+
+
+        label {
+            display: block;
+
+            margin-bottom: 7px;
+
+            font-weight: bold;
+
+            color: #444;
+        }
+
+
+        input,
+        select,
+        textarea {
+
+            width: 100%;
+
+            padding: 12px 13px;
+
+            border:
+                1px solid #d0d0d0;
+
+            border-radius: 9px;
+
+            font-size: 15px;
+
+            outline: none;
+
+            background: white;
+        }
+
+
+        textarea {
+            resize: vertical;
+
+            min-height: 110px;
+        }
+
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+
+            border-color: #43a047;
+
+            box-shadow:
+                0 0 5px
+                rgba(67, 160, 71, 0.18);
+        }
+
+
+        .hint {
+
+            margin-top: 6px;
+
+            color: #888;
+
+            font-size: 12px;
+        }
+
+
+        /* PHOTO DROPDOWN */
+
+        .photo-dropdown {
+
+            position: relative;
+
+            width: 100%;
+        }
+
+
+        .photo-main-btn {
+
+            width: 100%;
+
+            padding: 13px 15px;
+
+            background: #e8f5e9;
+
+            color: #2e7d32;
+
+            border:
+                1px solid #43a047;
+
+            border-radius: 9px;
+
+            font-size: 15px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+            display: flex;
+
+            justify-content:
+                space-between;
+
+            align-items: center;
+        }
+
+
+        .photo-main-btn:hover {
+
+            background: #dceddd;
+        }
+
+
+        .photo-options {
+
+            display: none;
+
+            position: absolute;
+
+            width: 100%;
+
+            top: 100%;
+
+            left: 0;
+
+            margin-top: 5px;
+
+            background: white;
+
+            border:
+                1px solid #d0d0d0;
+
+            border-radius: 9px;
+
+            box-shadow:
+                0 6px 15px
+                rgba(0, 0, 0, 0.12);
+
+            overflow: hidden;
+
+            z-index: 10;
+        }
+
+
+        .photo-option {
+
+            display: block;
+
+            padding: 13px 15px;
+
+            margin: 0;
+
+            color: #333;
+
+            font-weight: normal;
+
+            cursor: pointer;
+        }
+
+
+        .photo-option:hover {
+
+            background: #e8f5e9;
+
+            color: #2e7d32;
+        }
+
+
+        /* PHOTO PREVIEW */
+
+        .photo-preview {
+
+            margin-top: 15px;
+        }
+
+
+        .photo-preview img {
+
+            width: 180px;
+
+            height: 180px;
+
+            object-fit: cover;
+
+            border-radius: 12px;
+
+            border:
+                2px solid #43a047;
+
+            display: block;
+        }
+
+
+        .photo-name {
+
+            margin-top: 8px;
+
+            color: #666;
+
+            font-size: 13px;
+        }
+
+
+        /* PHOTO ACTION BUTTONS */
+
+        .photo-actions {
+
+            display: flex;
+
+            gap: 10px;
+
+            margin-top: 10px;
+
+            flex-wrap: wrap;
+        }
+
+
+        .retake-btn {
+
+            padding: 9px 16px;
+
+            border:
+                1px solid #2e7d32;
+
+            border-radius: 8px;
+
+            background: white;
+
+            color: #2e7d32;
+
+            font-size: 13px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+        }
+
+
+        .retake-btn:hover {
+
+            background: #e8f5e9;
+        }
+
+
+        .remove-btn {
+
+            padding: 9px 16px;
+
+            border:
+                1px solid #d32f2f;
+
+            border-radius: 8px;
+
+            background: white;
+
+            color: #d32f2f;
+
+            font-size: 13px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+        }
+
+
+        .remove-btn:hover {
+
+            background: #ffebee;
+        }
+
+
+        /* CAMERA MODAL */
+
+        .camera-modal {
+
+            display: none;
+
+            position: fixed;
+
+            top: 0;
+
+            left: 0;
+
+            width: 100%;
+
+            height: 100%;
+
+            background:
+                rgba(0, 0, 0, 0.75);
+
+            justify-content: center;
+
+            align-items: center;
+
+            z-index: 1000;
+
+            padding: 20px;
+        }
+
+
+        .camera-box {
+
+            background: white;
+
+            width: 100%;
+
+            max-width: 600px;
+
+            padding: 25px;
+
+            border-radius: 18px;
+
+            text-align: center;
+
+            box-shadow:
+                0 10px 35px
+                rgba(0, 0, 0, 0.3);
+        }
+
+
+        .camera-title {
+
+            color: #2e7d32;
+
+            font-size: 22px;
+
+            font-weight: bold;
+
+            margin-bottom: 15px;
+        }
+
+
+        #cameraVideo {
+
+            width: 100%;
+
+            max-height: 400px;
+
+            background: #111;
+
+            border-radius: 12px;
+
+            object-fit: cover;
+        }
+
+
+        .camera-buttons {
+
+            display: flex;
+
+            gap: 12px;
+
+            justify-content: center;
+
+            margin-top: 18px;
+        }
+
+
+        .camera-btn {
+
+            border: none;
+
+            padding: 12px 22px;
+
+            border-radius: 9px;
+
+            font-size: 15px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+        }
+
+
+        .take-btn {
+
+            background: #2e7d32;
+
+            color: white;
+        }
+
+
+        .take-btn:hover {
+
+            background: #1b5e20;
+        }
+
+
+        .close-btn {
+
+            background: #eeeeee;
+
+            color: #333;
+        }
+
+
+        .close-btn:hover {
+
+            background: #dddddd;
+        }
+
+
+        /* SUBMIT */
+
+        .submit {
+
+            width: 100%;
+
+            padding: 14px;
+
+            border: none;
+
+            border-radius: 10px;
+
+            background: #2e7d32;
+
+            color: white;
+
+            font-size: 16px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+            margin-top: 10px;
+        }
+
+
+        .submit:hover {
+
+            background: #1b5e20;
+        }
+
+
+        /* BACK */
+
+        .back {
+
+            display: block;
+
+            width: 220px;
+
+            margin: 22px auto 0;
+
+            text-align: center;
+
+            text-decoration: none;
+
+            color: #2e7d32;
+
+            border:
+                1px solid #2e7d32;
+
+            padding: 11px;
+
+            border-radius: 9px;
+
+            font-weight: bold;
+        }
+
+
+        .back:hover {
+
+            background: #2e7d32;
+
+            color: white;
+        }
+
+
+        /* FOOTER */
+
+        .footer {
+
+            text-align: center;
+
+            margin-top: 25px;
+
+            color: #999;
+
+            font-size: 13px;
+        }
+
+
+        @media (max-width: 700px) {
+
+            .header {
+
+                flex-direction: column;
+
+                gap: 10px;
+
+                text-align: center;
+            }
+
+
+            .grid {
+
+                grid-template-columns:
+                    1fr;
+            }
+
+
+            .full {
+
+                grid-column: auto;
+            }
+
+
+            .form-card {
+
+                padding: 25px 20px;
+            }
+
+
+            .title h1 {
+
+                font-size: 30px;
+            }
+
+
+            .camera-buttons {
+
+                flex-direction: column;
+            }
+
+        }
+
+    </style>
 
 </head>
 
+
 <body>
 
-```
-<div class="header">
-    <div class="brand">&#127860; FoodShare</div>
-    <div class="role">DONOR</div>
-</div>
 
-<div class="container">
+    <!-- HEADER -->
 
-    <div class="title">
-        <h1>Donate Food</h1>
-        <p>Share surplus food and help someone in need.</p>
+    <div class="header">
+
+        <div class="brand">
+            &#127860; FoodShare
+        </div>
+
+        <div class="role">
+            DONOR
+        </div>
+
     </div>
 
-    <div class="form-card">
 
-        <form action="donateFood" method="post" enctype="multipart/form-data">
+    <div class="container">
 
-            <div class="section">
-                <div class="section-title">Food Details</div>
 
-                <div class="grid">
+        <!-- TITLE -->
 
-                    <div class="field">
-                        <label for="food_name">Food Name</label>
-                        <input
-                            type="text"
-                            id="food_name"
-                            name="food_name"
-                            placeholder="Example: Rice"
-                            required
-                        >
-                    </div>
+        <div class="title">
 
-                    <div class="field">
-                        <label for="quantity">Quantity</label>
-                        <input
-                            type="number"
-                            id="quantity"
-                            name="quantity"
-                            min="1"
-                            placeholder="Enter quantity"
-                            required
-                        >
-                    </div>
-
-                    <div class="field">
-                        <label for="food_type">Food Type</label>
-                        <select id="food_type" name="food_type" required>
-                            <option value="">Select Food Type</option>
-                            <option value="Vegetarian">Vegetarian</option>
-                            <option value="Non-Vegetarian">Non-Vegetarian</option>
-                            <option value="Bakery">Bakery</option>
-                            <option value="Fruits">Fruits</option>
-                            <option value="Other">Other</option>
-                        </select>
-                    </div>
-
-                    <div class="field">
-                        <label for="food_image">Food Photo</label>
-                        <input
-                            type="file"
-                            id="food_image"
-                            name="food_image"
-                            accept="image/*"
-                        >
-                    </div>
-
-                    <div class="field full">
-                        <label for="description">Description</label>
-                        <textarea
-                            id="description"
-                            name="description"
-                            placeholder="Add details about the food..."
-                            rows="4"
-                        ></textarea>
-                    </div>
-
-                </div>
-            </div>
-
-            <div class="section">
-                <div class="section-title">Availability</div>
-
-                <div class="grid">
-
-                    <div class="field">
-                        <label for="location">Location</label>
-                        <input
-                            type="text"
-                            id="location"
-                            name="location"
-                            placeholder="Enter pickup location"
-                            required
-                        >
-                    </div>
-
-                    <div class="field">
-                        <label for="available_until">Available Until</label>
-                        <input
-                            type="datetime-local"
-                            id="available_until"
-                            name="available_until"
-                            required
-                        >
-                    </div>
-
-                </div>
-            </div>
-
-            <div class="section">
-                <div class="section-title">Donation Type</div>
-
-                <div class="grid">
-
-                    <div class="field">
-                        <label for="donation_type">Donation Type</label>
-                        <select
-                            id="donation_type"
-                            name="donation_type"
-                            required
-                        >
-                            <option value="">Select Type</option>
-                            <option value="FREE">Free Donation</option>
-                            <option value="LOW_COST">Low-Cost Sale</option>
-                        </select>
-                    </div>
-
-                    <div class="field">
-                        <label for="price">Price</label>
-                        <input
-                            type="number"
-                            id="price"
-                            name="price"
-                            min="0"
-                            step="0.01"
-                            placeholder="Enter price if applicable"
-                        >
-                        <div class="hint">
-                            Leave as 0 for free donations.
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-
-            <button class="submit" type="submit">
+            <h1>
                 Donate Food
-            </button>
+            </h1>
 
-        </form>
+            <p>
+                Share surplus food and help someone in need.
+            </p>
+
+        </div>
+
+
+        <!-- FORM -->
+
+        <div class="form-card">
+
+
+            <form
+                action="donateFood"
+                method="post"
+                enctype="multipart/form-data"
+            >
+
+
+                <!-- FOOD DETAILS -->
+
+                <div class="section">
+
+                    <div class="section-title">
+                        Food Details
+                    </div>
+
+
+                    <div class="grid">
+
+
+                        <!-- FOOD NAME -->
+
+                        <div class="field">
+
+                            <label for="food_name">
+                                Food Name
+                            </label>
+
+                            <input
+                                type="text"
+                                id="food_name"
+                                name="food_name"
+                                placeholder="Example: Rice"
+                                required
+                            >
+
+                        </div>
+
+
+                        <!-- QUANTITY -->
+
+                        <div class="field">
+
+                            <label for="quantity">
+                                Quantity
+                            </label>
+
+                            <input
+                                type="number"
+                                id="quantity"
+                                name="quantity"
+                                min="1"
+                                placeholder="Enter quantity"
+                                required
+                            >
+
+                        </div>
+
+
+                        <!-- FOOD TYPE -->
+
+                        <div class="field">
+
+                            <label for="food_type">
+                                Food Type
+                            </label>
+
+                            <select
+                                id="food_type"
+                                name="food_type"
+                                required
+                            >
+
+                                <option value="">
+                                    Select Food Type
+                                </option>
+
+                                <option value="Vegetarian">
+                                    Vegetarian
+                                </option>
+
+                                <option value="Non-Vegetarian">
+                                    Non-Vegetarian
+                                </option>
+
+                                <option value="Bakery">
+                                    Bakery
+                                </option>
+
+                                <option value="Fruits">
+                                    Fruits
+                                </option>
+
+                                <option value="Other">
+                                    Other
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <!-- FOOD PHOTO -->
+
+                        <div class="field">
+
+                            <label>
+                                Food Photo
+                            </label>
+
+
+                            <div class="photo-dropdown">
+
+
+                                <!-- MAIN BUTTON -->
+
+                                <button
+                                    type="button"
+                                    class="photo-main-btn"
+                                    onclick="togglePhotoOptions()"
+                                >
+
+                                    <span>
+                                        📷 Add Food Photo
+                                    </span>
+
+                                    <span>
+                                        ▼
+                                    </span>
+
+                                </button>
+
+
+                                <!-- OPTIONS -->
+
+                                <div
+                                    id="photoOptions"
+                                    class="photo-options"
+                                >
+
+
+                                    <!-- CHOOSE PHOTO -->
+
+                                    <label
+                                        for="food_image"
+                                        class="photo-option"
+                                    >
+                                        📁 Choose Photo
+                                    </label>
+
+
+                                    <!-- CAPTURE PHOTO -->
+
+                                    <div
+                                        class="photo-option"
+                                        onclick="openCamera()"
+                                    >
+                                        📷 Capture Photo
+                                    </div>
+
+
+                                </div>
+
+                            </div>
+
+
+                            <!-- FILE INPUT -->
+
+                            <input
+                                type="file"
+                                id="food_image"
+                                name="food_image"
+                                accept="image/*"
+                                style="display:none;"
+                            >
+
+
+                            <!-- PREVIEW -->
+
+                            <div
+                                id="photoPreview"
+                                class="photo-preview"
+                            ></div>
+
+
+                        </div>
+
+
+                        <!-- DESCRIPTION -->
+
+                        <div class="field full">
+
+                            <label for="description">
+                                Description
+                            </label>
+
+                            <textarea
+                                id="description"
+                                name="description"
+                                placeholder="Add details about the food..."
+                                rows="4"
+                            ></textarea>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+
+                <!-- AVAILABILITY -->
+
+                <div class="section">
+
+                    <div class="section-title">
+                        Availability
+                    </div>
+
+
+                    <div class="grid">
+
+
+                        <!-- LOCATION -->
+
+                        <div class="field">
+
+                            <label for="location">
+                                Location
+                            </label>
+
+                            <input
+                                type="text"
+                                id="location"
+                                name="location"
+                                placeholder="Enter pickup location"
+                                required
+                            >
+
+                        </div>
+
+
+                        <!-- AVAILABLE UNTIL -->
+
+                        <div class="field">
+
+                            <label for="available_until">
+                                Available Until
+                            </label>
+
+                            <input
+                                type="datetime-local"
+                                id="available_until"
+                                name="available_until"
+                                required
+                            >
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+
+                <!-- DONATION TYPE -->
+
+                <div class="section">
+
+                    <div class="section-title">
+                        Donation Type
+                    </div>
+
+
+                    <div class="grid">
+
+
+                        <!-- DONATION TYPE -->
+
+                        <div class="field">
+
+                            <label for="donation_type">
+                                Donation Type
+                            </label>
+
+                            <select
+                                id="donation_type"
+                                name="donation_type"
+                                required
+                            >
+
+                                <option value="">
+                                    Select Type
+                                </option>
+
+                                <option value="FREE">
+                                    Free Donation
+                                </option>
+
+                                <option value="LOW_COST">
+                                    Low-Cost Sale
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <!-- PRICE -->
+
+                        <div class="field">
+
+                            <label for="price">
+                                Price
+                            </label>
+
+                            <input
+                                type="number"
+                                id="price"
+                                name="price"
+                                min="0"
+                                step="0.01"
+                                placeholder="Enter price if applicable"
+                            >
+
+                            <div class="hint">
+                                Leave as 0 for free donations.
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+
+                <!-- SUBMIT -->
+
+                <button
+                    class="submit"
+                    type="submit"
+                >
+                    Donate Food
+                </button>
+
+
+            </form>
+
+        </div>
+
+
+        <!-- BACK -->
+
+        <a
+            class="back"
+            href="donor-dashboard.html"
+        >
+            Back to Dashboard
+        </a>
+
+
+        <!-- FOOTER -->
+
+        <div class="footer">
+            FoodShare © 2026
+        </div>
+
 
     </div>
 
-    <a class="back" href="donor-dashboard.html">
-        Back to Dashboard
-    </a>
 
-    <div class="footer">
-        FoodShare © 2026
+    <!-- ========================= -->
+    <!-- CAMERA MODAL -->
+    <!-- ========================= -->
+
+    <div
+        id="cameraModal"
+        class="camera-modal"
+    >
+
+        <div class="camera-box">
+
+
+            <div class="camera-title">
+                📷 Capture Food Photo
+            </div>
+
+
+            <video
+                id="cameraVideo"
+                autoplay
+                playsinline
+            ></video>
+
+
+            <canvas
+                id="cameraCanvas"
+                style="display:none;"
+            ></canvas>
+
+
+            <div class="camera-buttons">
+
+
+                <button
+                    type="button"
+                    class="camera-btn take-btn"
+                    onclick="takePhoto()"
+                >
+                    📸 Take Photo
+                </button>
+
+
+                <button
+                    type="button"
+                    class="camera-btn close-btn"
+                    onclick="closeCamera()"
+                >
+                    ✖ Close
+                </button>
+
+
+            </div>
+
+        </div>
+
     </div>
 
-</div>
+
+    <!-- JAVASCRIPT -->
+
+    <script>
+
+
+        // =========================
+        // VARIABLES
+        // =========================
+
+        const foodImage =
+            document.getElementById(
+                "food_image"
+            );
+
+
+        const photoPreview =
+            document.getElementById(
+                "photoPreview"
+            );
+
+
+        const cameraModal =
+            document.getElementById(
+                "cameraModal"
+            );
+
+
+        const cameraVideo =
+            document.getElementById(
+                "cameraVideo"
+            );
+
+
+        const cameraCanvas =
+            document.getElementById(
+                "cameraCanvas"
+            );
+
+
+        let cameraStream = null;
+
+
+        // =========================
+        // PHOTO DROPDOWN
+        // =========================
+
+        function togglePhotoOptions() {
+
+            const options =
+                document.getElementById(
+                    "photoOptions"
+                );
+
+
+            if (
+                options.style.display ===
+                "block"
+            ) {
+
+                options.style.display =
+                    "none";
+
+            }
+
+            else {
+
+                options.style.display =
+                    "block";
+
+            }
+
+        }
+
+
+        // =========================
+        // SHOW PHOTO
+        // =========================
+
+        function showPhoto(file) {
+
+            if (!file) {
+
+                return;
+
+            }
+
+
+            if (
+                !file.type.startsWith(
+                    "image/"
+                )
+            ) {
+
+                alert(
+                    "Please select an image file."
+                );
+
+                return;
+
+            }
+
+
+            const reader =
+                new FileReader();
+
+
+            reader.onload =
+                function(event) {
+
+                    photoPreview.innerHTML =
+
+                        '<img src="' +
+                        event.target.result +
+                        '" alt="Food Photo Preview">' +
+
+                        '<div class="photo-name">' +
+                        file.name +
+                        '</div>' +
+
+                        '<div class="photo-actions">' +
+
+                        '<button ' +
+                        'type="button" ' +
+                        'class="retake-btn" ' +
+                        'onclick="openCamera()">' +
+
+                        '🔄 Retake Photo' +
+
+                        '</button>' +
+
+                        '<button ' +
+                        'type="button" ' +
+                        'class="remove-btn" ' +
+                        'onclick="removePhoto()">' +
+
+                        '🗑️ Remove Photo' +
+
+                        '</button>' +
+
+                        '</div>';
+
+                };
+
+
+            reader.readAsDataURL(file);
+
+        }
+
+
+        // =========================
+        // CHOOSE PHOTO
+        // =========================
+
+        foodImage.addEventListener(
+            "change",
+            function() {
+
+                const file =
+                    this.files[0];
+
+
+                showPhoto(file);
+
+
+                document.getElementById(
+                    "photoOptions"
+                ).style.display =
+                    "none";
+
+            }
+        );
+
+
+        // =========================
+        // REMOVE PHOTO
+        // =========================
+
+        function removePhoto() {
+
+            /* Clear selected file */
+
+            foodImage.value = "";
+
+
+            /* Remove preview */
+
+            photoPreview.innerHTML = "";
+
+
+            /* Close camera if open */
+
+            closeCamera();
+
+        }
+
+
+        // =========================
+        // OPEN CAMERA
+        // =========================
+
+        async function openCamera() {
+
+            document.getElementById(
+                "photoOptions"
+            ).style.display =
+                "none";
+
+
+            if (
+                !navigator.mediaDevices ||
+                !navigator.mediaDevices
+                    .getUserMedia
+            ) {
+
+                alert(
+                    "Your browser does not support camera access."
+                );
+
+                return;
+
+            }
+
+
+            /* If old camera is running,
+               stop it first */
+
+            if (cameraStream) {
+
+                cameraStream
+                    .getTracks()
+                    .forEach(
+                        function(track) {
+
+                            track.stop();
+
+                        }
+                    );
+
+                cameraStream = null;
+
+            }
+
+
+            try {
+
+                cameraStream =
+                    await navigator
+                    .mediaDevices
+                    .getUserMedia({
+
+                        video: true,
+
+                        audio: false
+
+                    });
+
+
+                cameraVideo.srcObject =
+                    cameraStream;
+
+
+                cameraModal.style.display =
+                    "flex";
+
+            }
+
+
+            catch (error) {
+
+                console.log(
+                    "Camera error:",
+                    error
+                );
+
+
+                if (
+                    error.name ===
+                    "NotAllowedError"
+                ) {
+
+                    alert(
+                        "Camera permission was denied. Please allow camera access in Chrome."
+                    );
+
+                }
+
+                else if (
+                    error.name ===
+                    "NotFoundError"
+                ) {
+
+                    alert(
+                        "No camera was found on this device."
+                    );
+
+                }
+
+                else {
+
+                    alert(
+                        "Unable to open camera. Please check your camera permission."
+                    );
+
+                }
+
+            }
+
+        }
+
+
+        // =========================
+        // TAKE PHOTO
+        // =========================
+
+        function takePhoto() {
+
+            if (!cameraStream) {
+
+                alert(
+                    "Camera is not open."
+                );
+
+                return;
+
+            }
+
+
+            const width =
+                cameraVideo.videoWidth;
+
+
+            const height =
+                cameraVideo.videoHeight;
+
+
+            if (
+                width === 0 ||
+                height === 0
+            ) {
+
+                alert(
+                    "Camera is still loading. Please wait a moment and try again."
+                );
+
+                return;
+
+            }
+
+
+            cameraCanvas.width =
+                width;
+
+
+            cameraCanvas.height =
+                height;
+
+
+            const context =
+                cameraCanvas.getContext(
+                    "2d"
+                );
+
+
+            context.drawImage(
+
+                cameraVideo,
+
+                0,
+
+                0,
+
+                width,
+
+                height
+
+            );
+
+
+            cameraCanvas.toBlob(
+
+                function(blob) {
+
+                    if (!blob) {
+
+                        alert(
+                            "Could not capture photo."
+                        );
+
+                        return;
+
+                    }
+
+
+                    const file =
+                        new File(
+
+                            [blob],
+
+                            "food_camera_photo.jpg",
+
+                            {
+                                type:
+                                    "image/jpeg"
+                            }
+
+                        );
+
+
+                    try {
+
+                        const dataTransfer =
+                            new DataTransfer();
+
+
+                        dataTransfer.items.add(
+                            file
+                        );
+
+
+                        foodImage.files =
+                            dataTransfer.files;
+
+                    }
+
+
+                    catch (error) {
+
+                        console.log(
+                            "Could not attach camera photo:",
+                            error
+                        );
+
+                    }
+
+
+                    showPhoto(file);
+
+
+                    closeCamera();
+
+                },
+
+
+                "image/jpeg",
+
+                0.9
+
+            );
+
+        }
+
+
+        // =========================
+        // CLOSE CAMERA
+        // =========================
+
+        function closeCamera() {
+
+            if (cameraStream) {
+
+                cameraStream
+                    .getTracks()
+                    .forEach(
+                        function(track) {
+
+                            track.stop();
+
+                        }
+                    );
+
+
+                cameraStream = null;
+
+            }
+
+
+            cameraVideo.srcObject =
+                null;
+
+
+            cameraModal.style.display =
+                "none";
+
+        }
+
+
+        // =========================
+        // CLOSE DROPDOWN
+        // =========================
+
+        document.addEventListener(
+            "click",
+            function(event) {
+
+                const dropdown =
+                    document.querySelector(
+                        ".photo-dropdown"
+                    );
+
+
+                if (
+                    !dropdown.contains(
+                        event.target
+                    )
+                ) {
+
+                    document.getElementById(
+                        "photoOptions"
+                    ).style.display =
+                        "none";
+
+                }
+
+            }
+        );
+
+
+    </script>
 
 
 </body>
+
 </html>
